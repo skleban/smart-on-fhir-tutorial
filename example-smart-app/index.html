@@ -35,7 +35,12 @@
         <tr>
           <th>Age:</th>
           <td id='age'></td>
+        </tr>        
+        <tr>
+          <th>Address:</th>
+          <td id='address'></td>
         </tr>
+        
       </table>
       <h2>Observation Resource</h2>
       <table>
@@ -86,6 +91,7 @@
   $('#gender').html(p.gender);
   $('#birthdate').html(p.birthdate);
   $('#age').html(p.age);
+  $('#address').html(p.address[0].text);
   $('#height').html(p.height);
   $('#systolicbp').html(p.systolicbp);
   $('#diastolicbp').html(p.diastolicbp);
