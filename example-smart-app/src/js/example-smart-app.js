@@ -35,6 +35,7 @@
           var dobStr = monthIndex + '/' + day + '/' + year;
           var fname = '';
           var lname = '';
+          var maritalStatus = patient.maritalStatus;
 
           if(typeof patient.name[0] !== 'undefined') {
             fname = patient.name[0].given.join(' ');
@@ -53,6 +54,7 @@
           p.fname = fname;
           p.lname = lname;
           p.age = parseInt(calculateAge(dob));
+          p.maritalStatus = maritalStatus;
 
           if(typeof height[0] != 'undefined' && typeof height[0].valueQuantity.value != 'undefined' && typeof height[0].valueQuantity.unit != 'undefined') {
             p.height = height[0].valueQuantity.value + ' ' + height[0].valueQuantity.unit;
@@ -92,6 +94,7 @@
       gender: {value: ''},
       birthdate: {value: ''},
       age: {value: ''},
+      maritalStatus: {value: ''},
       height: {value: ''},
       systolicbp: {value: ''},
       diastolicbp: {value: ''},
@@ -149,7 +152,8 @@
     $('#loading').hide();
     $('#fname').html(p.fname);
     $('#lname').html(p.lname);
-    $('#gender').html(p.gender);
+    $('#gender').html(p.gender);    
+    $('#maritalStatus').html(p.maritalStatus.text);
     $('#birthdate').html(p.birthdate);
     $('#age').html(p.age);
     $('#height').html(p.height);
